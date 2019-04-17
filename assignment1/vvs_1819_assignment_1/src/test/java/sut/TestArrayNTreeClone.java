@@ -15,6 +15,7 @@ class TestArrayNTreeClone {
 		ArrayNTree<Integer> v = new ArrayNTree<>(list,2);
 		ArrayNTree<Integer> clone = v.clone();
 		assertEquals(v, clone);
+		
 	}
 
 }
