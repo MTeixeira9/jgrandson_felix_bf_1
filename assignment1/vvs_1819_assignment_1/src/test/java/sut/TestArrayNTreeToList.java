@@ -14,6 +14,7 @@ public class TestArrayNTreeToList {
 	
 	@Test
 	public void test_toList() {
+		
 		List<Integer> list = Arrays.asList(1,2,3);
 		ArrayNTree<Integer> v = new ArrayNTree<>(list,2); 
 		List<Integer> test = v.toList();
@@ -22,6 +23,8 @@ public class TestArrayNTreeToList {
 		expect.add(2);
 		expect.add(3);
 		assertEquals(expect, test);
+		
+		
 	}
 	
 

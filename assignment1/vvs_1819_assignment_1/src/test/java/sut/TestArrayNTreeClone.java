@@ -11,11 +11,14 @@ class TestArrayNTreeClone {
 
 	@Test
 	public void test_clone() {
-		List<Integer> list = Arrays.asList(1,2,3);
+		
+		List<Integer> list = Arrays.asList(1,2);
 		ArrayNTree<Integer> v = new ArrayNTree<>(list,2);
 		ArrayNTree<Integer> clone = v.clone();
 		assertEquals(v, clone);
 		
+		
 	}
+	
 
 }
