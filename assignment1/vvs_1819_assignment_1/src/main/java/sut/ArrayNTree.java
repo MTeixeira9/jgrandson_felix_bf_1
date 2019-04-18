@@ -143,28 +143,37 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 
 	public void insert(T elem) {
 		
+		System.out.print("\n1 - ");
 		if(isEmpty()) {
+			System.out.print("2 - ");
 			data=elem;
 			empty=false;
 			return;
 		}
-		
-		if (contains(elem)) // will not insert repetitions
+		System.out.print("3 - ");
+		if (contains(elem)) { // will not insert repetitions
+			System.out.print("4 - ");
 			return;
+		}
 		
+		System.out.print("5 - ");
 		// if elem<data, elem should be at root, and we re-insert data
 		if (data.compareTo(elem)>0) {
+			System.out.print("6 - ");
 			T tmp = data; data = elem; elem = tmp; // swap values
 		}
 		
+		System.out.print("7 - ");
 		if(isLeaf()) {
+			System.out.print("8 - ");
 			insertAt(elem, 0);	
 			return;
 		}
 		
 		int position = proposePosition(elem);
-		
+		System.out.print("9 - ");
 		if (position==-1) {
+			System.out.print("10 - ");
 			// element 'elem' is smaller than all children
 			// then we place it at index 0, and insert the previous children[0] below 'elem'
 			T previousValue = children[0].data;
@@ -173,29 +182,40 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 		} 
 		
 		else if (nChildren<capacity && children[position] == null) {
+			System.out.print("11 - 12 - ");
 			// there's space available, and elem > all children
-			if (elem.compareTo(children[position-1].max())>0)
+			if (elem.compareTo(children[position-1].max())>0) {
 				// if elem is also larger than all children of the last child, place it here 
+				System.out.print("13 - ");
 				insertAt(elem, position);
-			else
+			}
+			else {
+				System.out.print("14 - ");
 				// otherwise, place it below last child
 				children[position-1].insert(elem);
+			}
 		}
 		
 		else if (nChildren<capacity && elem.compareTo(children[position].max())>0) {
 			// element can be placed after an existing node N (there's space and it's larger
 			// than all children of N) but we must shift all those on the right
+			System.out.print("11 - 15 - 16 - ");
 			insertAt(elem, position+1);
 		}
 		
 		else if (nChildren==capacity || elem.compareTo(children[position].max())<0) {
 			// if the node's capacity is full, and elem is larger than all children
 			// place it below the last child
-			if (position==capacity)
+			System.out.print("11 - 15 - 17 - 18 - ");
+			if (position==capacity) {
+				System.out.print("19 - ");
 				children[position-1].insert(elem);
-			else
+			}
+			else {
 				// otherwise, it must go under the proposed child's position
+				System.out.print("20 - ");
 				children[position].insert(elem);
+			}
 		}
 	}
 
