@@ -30,9 +30,13 @@ public class Start {
 
 		ArrayNTree<Integer> tree = new ArrayNTree<>(list, 3);
 		System.out.println(tree.info());
+		System.out.println();
+		System.out.println();
 		//tree.delete(3);
 		//System.out.println(tree.info());
-		tree.insert(18);
+		tree.insert(20);
+		System.out.println();
+		System.out.println();
 		System.out.println(tree.info()); 
 	}
 }
