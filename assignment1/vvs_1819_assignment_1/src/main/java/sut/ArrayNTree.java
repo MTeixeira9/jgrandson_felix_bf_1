@@ -144,6 +144,7 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 	public void insert(T elem) {
 		
 		System.out.print("\n1 - ");
+		//p1
 		if(isEmpty()) {
 			System.out.print("2 - ");
 			data=elem;
@@ -151,6 +152,7 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 			return;
 		}
 		System.out.print("3 - ");
+		//p2
 		if (contains(elem)) { // will not insert repetitions
 			System.out.print("4 - ");
 			return;
@@ -158,12 +160,14 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 		
 		System.out.print("5 - ");
 		// if elem<data, elem should be at root, and we re-insert data
+		//P3
 		if (data.compareTo(elem)>0) {
 			System.out.print("6 - ");
 			T tmp = data; data = elem; elem = tmp; // swap values
 		}
 		
 		System.out.print("7 - ");
+		//P4
 		if(isLeaf()) {
 			System.out.print("8 - ");
 			insertAt(elem, 0);	
@@ -172,6 +176,7 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 		
 		int position = proposePosition(elem);
 		System.out.print("9 - ");
+		//P5
 		if (position==-1) {
 			System.out.print("10 - ");
 			// element 'elem' is smaller than all children
@@ -181,9 +186,11 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 			this.insert(previousValue);
 		} 
 		
+		//P6
 		else if (nChildren<capacity && children[position] == null) {
 			System.out.print("11 - 12 - ");
 			// there's space available, and elem > all children
+			//P7
 			if (elem.compareTo(children[position-1].max())>0) {
 				// if elem is also larger than all children of the last child, place it here 
 				System.out.print("13 - ");
@@ -196,6 +203,7 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 			}
 		}
 		
+		//P8
 		else if (nChildren<capacity && elem.compareTo(children[position].max())>0) {
 			// element can be placed after an existing node N (there's space and it's larger
 			// than all children of N) but we must shift all those on the right
@@ -203,10 +211,12 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 			insertAt(elem, position+1);
 		}
 		
+		//P9
 		else if (nChildren==capacity || elem.compareTo(children[position].max())<0) {
 			// if the node's capacity is full, and elem is larger than all children
 			// place it below the last child
 			System.out.print("11 - 15 - 17 - 18 - ");
+			//P10
 			if (position==capacity) {
 				System.out.print("19 - ");
 				children[position-1].insert(elem);

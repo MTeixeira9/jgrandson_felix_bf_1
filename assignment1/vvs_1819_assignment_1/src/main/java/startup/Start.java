@@ -26,15 +26,15 @@ public class Start {
 		System.out.println(tree.info());
 		// output eg: [1:[39][41][59][85]], size: 5, height: 2, nLeaves: 4
 	*/
-		List<Integer> list = Arrays.asList(2,7,11,15,16,19);  
+		List<Integer> list = Arrays.asList(1,2);  
 
-		ArrayNTree<Integer> tree = new ArrayNTree<>(list, 3);
+		ArrayNTree<Integer> tree = new ArrayNTree<>(list, 2);
 		System.out.println(tree.info());
 		System.out.println();
 		System.out.println();
 		//tree.delete(3);
 		//System.out.println(tree.info());
-		tree.insert(20);
+		tree.insert(3);
 		System.out.println();
 		System.out.println();
 		System.out.println(tree.info()); 
