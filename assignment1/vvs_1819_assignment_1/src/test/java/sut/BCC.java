@@ -10,138 +10,92 @@ import org.junit.jupiter.api.Test;
 
 public class BCC {
 
-	// Tree 1 is empty
-	// Tree 2 is empty
-	// Tree 2 is null
-	// Tree 1 intersection of Tree 2 is empty/full/partial
+		// Tree 1 is empty
+		// Tree 2 is empty
+		// Tree 2 is null
+		// Tree 1 intersection of Tree 2 is empty/full/partial
 	
-	//TESTE 1. Tree 1 is empty
-		//Caso1: Estah empty
-		//Caso2: NotEmpty
 	
-	/**
-	 * Tree 1 is empty
-	 */
-	@Test
-	public void test1_caso1() {
-		
-		ArrayNTree<Integer> v1 = new ArrayNTree<>(2); 
-		boolean res = v1.isEmpty();
-		
-		assertEquals(true, res);
-	}
-	
-	/**
-	 * Tree 1 is not empty
-	 */
-	@Test
-	public void test1_caso2() {
-		
-		List<Integer> l1 = Arrays.asList(1,2,3);
-		ArrayNTree<Integer> v1 = new ArrayNTree<>(l1,2); 
-		boolean res = v1.isEmpty();
-		
-		assertEquals(false, res);
-	}
+	//Base - [~T1 empty, ~T2 empty, ~T2 null, T1 & T2 empty] - escrever no relatorio 
 
-	//TESTE 2. Tree 2 is empty
-			//Caso1: Estah empty
-			//Caso2: NotEmpty
-		
-	
-	/**
-	 * Tree 2 is empty
-	 */
 	@Test
-	public void test2_caso1() {
+	public void teste_base() {
+		List<Integer> l1 = Arrays.asList(1,2,3,4);
+		List<Integer> l2 = Arrays.asList(5,6,7,8);
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
+		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
-		ArrayNTree<Integer> v2 = new ArrayNTree<>(2); 
-		boolean res = v2.isEmpty();
-		
-		assertEquals(true, res);
+		assertFalse(t1.equals(t2), "Teste_base");
 	}
 	
-	/**
-	 * Tree 2 is not empty
+	/*
+	 * [t1,~t2,~t2,empty]
 	 */
 	@Test
-	public void test2_caso2() {
+	public void teste_t1() {
+		List<Integer> l1 = Arrays.asList(1);
+		List<Integer> l2 = Arrays.asList(3,4);
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,1);
+		t1.delete(1);
+		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
-		List<Integer> l1 = Arrays.asList(1,2,3);
-		ArrayNTree<Integer> v2 = new ArrayNTree<>(l1,2); 
-		boolean res = v2.isEmpty();
-		
-		assertEquals(false, res);
+		assertFalse(t1.equals(t2), "Teste_1");
 	}
 	
-	//TESTE 3. Tree 2 is null
-		//Caso1: Estah null
-		//Caso2: Not null
-	
-	
-	/**
-	 * Tree 2 is null
+	/*
+	 * [~t1,t2,~t2,empty]
 	 */
 	@Test
-	public void test3_caso1() {
+	public void teste_t2() {
 		
-		List<Integer> l1 = null;
-		ArrayNTree<Integer> v2 = new ArrayNTree<>(l1,2); 
-		boolean res = v2.contains(1);
+		List<Integer> l1 = Arrays.asList(1,2);
 		
-		assertEquals(false, res);
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
+		ArrayNTree<Integer> t2 = new ArrayNTree<>(0);
+		
+		assertFalse(t1.equals(t2), "Teste_2");
 	}
 	
-	/**
-	 * Tree 2 is not null
+	/*
+	 * [~t1,~t2,t2,empty]
 	 */
 	@Test
-	public void test3_caso2() {
+	public void teste_t3() {
 		
-		List<Integer> l1 = Arrays.asList(1,2,3);
-		ArrayNTree<Integer> v2 = new ArrayNTree<>(l1,2); 
-		boolean res = v2.contains(1);
+		List<Integer> l1 = Arrays.asList(1,2);
 		
-		assertEquals(true, res);
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
+		ArrayNTree<Integer> t2 = null;
+		
+		assertFalse(t1.equals(t2), "Teste_3");
 	}
 	
-	//TESTE 4. Tree 1 intersection of Tree 2 is empty/full/partial
-			//Caso1: Tree 1 intersection of Tree 2 is empty
-			//Caso2: Tree 1 intersection of Tree 2 is full
-			//Caso3: Tree 1 intersection of Tree 2 is partial
-	
-	/**
-	 * Tree 1 intersection of Tree 2 is empty
+	/*
+	 * [~t1,~t2,~t2,full]
 	 */
 	@Test
-	public void test4_caso1() {
-
-		ArrayNTree<Integer> one = new ArrayNTree<>(2); 
-		
-		List<Integer> l2 = Arrays.asList(1,2,3);
-		ArrayNTree<Integer> two = new ArrayNTree<>(l2,2); 
-		
-	}
-	
-	/**
-	 * Tree 1 intersection of Tree 2 is full
-	 */
-	@Test
-	public void test4_caso2() {
+	public void teste_t4() {
 		
 		List<Integer> l1 = Arrays.asList(1,2,3,4);
-		ArrayNTree<Integer> one = new ArrayNTree<>(2); 
+		List<Integer> l2 = Arrays.asList(1,2,3,4);
 		
-		List<Integer> l2 = Arrays.asList(1,2,3);
-		ArrayNTree<Integer> two = new ArrayNTree<>(l2,2); 
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
+		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
+		
+		assertTrue(t1.equals(t2), "Teste_4");
 	}
 	
-	/**
-	 * Tree 1 intersection of Tree 2 is partial
+	/*
+	 * [~t1,~t2,~t2,partial]
 	 */
 	@Test
-	public void test4_caso3() {
+	public void teste_t5() {
+		List<Integer> l1 = Arrays.asList(1,2,3,4);
+		List<Integer> l2 = Arrays.asList(2,3);
 		
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
+		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
+		
+		assertFalse(t1.equals(t2), "Teste_5");
 	}
-	
 }
