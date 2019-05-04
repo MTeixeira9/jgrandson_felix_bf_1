@@ -18,6 +18,7 @@ public class BCC {
 	
 	//Base - [~T1 empty, ~T2 empty, ~T2 null, T1 & T2 empty] - escrever no relatorio 
 
+
 	@Test
 	public void teste_base() {
 		List<Integer> l1 = Arrays.asList(1,2,3,4);
@@ -27,19 +28,22 @@ public class BCC {
 		
 		assertFalse(t1.equals(t2), "Teste_base");
 	}
-	
+	 
 	/*
 	 * [t1,~t2,~t2,empty]
 	 */
 	@Test
 	public void teste_t1() {
-		List<Integer> l1 = Arrays.asList(1);
+		//List<Integer> l1 = Arrays.asList(1); 
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(1);
+		
 		List<Integer> l2 = Arrays.asList(3,4);
-		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,1);
-		t1.delete(1);
 		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
+		//t1.delete(1);
+		
 		assertFalse(t1.equals(t2), "Teste_1");
+		
 	}
 	
 	/*

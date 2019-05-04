@@ -299,6 +299,12 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 		
 		if (one == other)
 			return true;
+		
+		if(this.isEmpty() && other.isEmpty())
+			return true;
+		else if (this.isEmpty() || other.isEmpty()) {
+			return false;
+		}
 				
 		if (one != null && other != null) {
 			Iterator<T> it1 = one.iterator();
