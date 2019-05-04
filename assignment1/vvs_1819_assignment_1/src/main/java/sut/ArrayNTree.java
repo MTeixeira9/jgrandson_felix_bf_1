@@ -310,10 +310,19 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 		if (one == other)
 			return true;
 
+
 		if(this.isEmpty() && other.isEmpty())
 			return true;
 		else if(this.isEmpty() || other.isEmpty())
 			return false;
+
+
+		if(this.isEmpty() && other.isEmpty())
+			return true;
+		else if (this.isEmpty() || other.isEmpty()) {
+			return false;
+		}
+				
 
 		if (one != null && other != null) {
 			Iterator<T> it1 = one.iterator();
@@ -392,7 +401,7 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 		 * Constructor
 		 */
 		public PrefixIterator(ArrayNTree<T> tree) {
-			stack = new LinkedList<>();
+			stack = new LinkedList<>(); 
 			//alteracao
 			if(!isEmpty())
 				stack.push(tree);
