@@ -40,4 +40,23 @@ public class ArrayNTreeQuickCheck {
 		
 		
 	}
+	
+	@Property
+	public void testOfRemoveAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
+		
+		List<Integer> list_elem_original = tree.toList();
+		ArrayNTree<Integer> elem_clone = tree.clone();
+		
+		
+		for(Integer i : list_elem_original) {
+			
+			elem_clone.delete(i);
+		}
+		
+		assertTrue(elem_clone.isEmpty());
+		
+	}
+	
+	
+	
 }
