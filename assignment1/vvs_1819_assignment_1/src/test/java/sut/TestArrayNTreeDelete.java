@@ -13,7 +13,7 @@ public class TestArrayNTreeDelete {
 	public void test_Delete_Capacity_Empty() { //if(isEmpty() || data.compareTo(elem)>0)
 		ArrayNTree<Integer> v = new ArrayNTree<>(2);
 		v.delete(1);
-		assertEquals(1,v.size());
+		assertEquals(0,v.size());
 	}
 	
 	@Test
@@ -28,7 +28,7 @@ public class TestArrayNTreeDelete {
 	public void test_Delete_Capacity_OneElement_IsLeaf3() { //isLeaf && delete->raiz
 		ArrayNTree<Integer> v = new ArrayNTree<>(1, 2);
 		v.delete(1);
-		assertEquals(1,v.size());
+		assertEquals(0,v.size());
 	}
 	
 	@Test

@@ -22,7 +22,7 @@ public class ArrayNTreeGenerator extends Generator<ArrayNTree<Integer>> {
 	public ArrayNTree<Integer> generate(SourceOfRandomness random, GenerationStatus status) {
 		
 		int capacity = 1 + random.nextInt(MAX_CAPACITY);
-		int num_elementos = 1 + random.nextInt(NUM_ELEMENTOS);
+		int num_elementos = random.nextInt(NUM_ELEMENTOS);
 
 			
 		ArrayNTree<Integer> tree = new ArrayNTree<Integer>(capacity);

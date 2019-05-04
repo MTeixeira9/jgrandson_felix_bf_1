@@ -8,16 +8,12 @@ import java.util.List;
 import org.junit.Test;
 
 public class TestArrayNTreeMax {
-
-	/*
-	@Test
-	public void test_Max_OneElement() {
-		ArrayNTree<Integer> v = new ArrayNTree<>(1,2); 
-		int m = v.max();
-		assertEquals(1, m);
-	}
 	
-	*/
+	@Test
+	public void test_Max_NoElement() {
+		ArrayNTree<Integer> v = new ArrayNTree<>(2); 
+		assertEquals(null, v.max());
+	}
 	
 	@Test
 	public void test_Max_MoreElements() {

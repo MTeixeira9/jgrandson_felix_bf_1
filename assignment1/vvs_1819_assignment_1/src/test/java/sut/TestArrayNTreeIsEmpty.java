@@ -12,12 +12,4 @@ public class TestArrayNTreeIsEmpty {
 		boolean res = v.isEmpty();
 		assertEquals(true, res);
 	}
-	/*
-	@Test
-	public void testIsEmptyFalse() {
-		ArrayNTree<Integer> v = new ArrayNTree<>(1, 2); //data = 1, capacity = 2
-		boolean res = v.isEmpty();
-		assertEquals(false, res);
-	}	
-*/
 }

@@ -1,6 +1,7 @@
 package sut;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -20,8 +21,8 @@ import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
 @RunWith(JUnitQuickcheck.class)
 public class ArrayNTreeQuickCheck {
 
-	/**
-	@Property (trials = 3)
+	
+	@Property (trials = 1000)
 	public void testOfInsertion(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
 		System.out.println("------------------Inicio do teste Insert -------------------");
@@ -55,10 +56,10 @@ public class ArrayNTreeQuickCheck {
 
 	}
 
-	 */
+	 
 
 	/**
-	@Property (trials=5)
+	@Property (trials=1000)
 	public void testOfRemoveAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
 		List<Integer> list_elem_original = tree.toList();
@@ -85,9 +86,9 @@ public class ArrayNTreeQuickCheck {
 
 	 */
 
-	/**
-
-	@Property (trials=50)
+	
+/**
+	@Property (trials=1000)
 	public void testOfInsertAndRemove(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree, 
 										@InRange(min="1" , max= "100") int i) {
 		while(tree.contains(i)) {
@@ -129,7 +130,7 @@ public class ArrayNTreeQuickCheck {
 	 */
 
 	/**
-	@Property (trials=50)
+	@Property (trials=1000)
 	public void testOfInsertAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
 		List<Integer> list_elem_original = tree.toList();
@@ -144,7 +145,7 @@ public class ArrayNTreeQuickCheck {
 		System.out.println();
 
 
-		for(Integer i : list_elem_original) {
+		for(Integer i : tree) {
 			elem_clone.insert(i);
 		}
 		System.out.println("-----------------ARVORE Depois de inserir TODOS ELEMS----------------------");
@@ -159,13 +160,17 @@ public class ArrayNTreeQuickCheck {
 
 	}
 	
+	
 	*/
 	
-	@Property (trials=1000)
+	
+	/**
+	@Property (trials=10000)
 	public void testOfInsertAnElementSeveralTimes(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree,
 													@InRange(min="1" , max= "100") int indice,
 													@InRange(min="20" , max= "100") int nVezes) {
 		
+		assumeTrue(!tree.isEmpty());
 		
 
 		List<Integer> list_elem_original = tree.toList();
@@ -203,7 +208,7 @@ public class ArrayNTreeQuickCheck {
 
 	}
 	
-	
+	*/
 
 
 }

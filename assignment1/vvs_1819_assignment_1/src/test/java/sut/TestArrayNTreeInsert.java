@@ -1,12 +1,10 @@
 package sut;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class TestArrayNTreeInsert {
 	
@@ -17,7 +15,6 @@ public class TestArrayNTreeInsert {
 		v.insert(2); //contains(elem)
 		v.insert(1); //data.compareTo(elem)>0
 		v.insert(3); //isLeaf()
-		
 		assertEquals(3, v.size());
 	} 
 	
@@ -37,9 +34,7 @@ public class TestArrayNTreeInsert {
 		v.delete(22);
 		v.delete(25);
 		v.insert(18);
-		assertEquals(7, v.size());
-
-		
+		assertEquals(7, v.size());		
 	}
 	
 	@Test
@@ -52,6 +47,4 @@ public class TestArrayNTreeInsert {
 	
 	}
 	
-	
-
 }

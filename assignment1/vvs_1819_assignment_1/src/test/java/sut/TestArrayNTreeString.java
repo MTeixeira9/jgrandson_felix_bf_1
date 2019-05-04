@@ -32,7 +32,4 @@ public class TestArrayNTreeString {
 		String s = v.info();
 		assertEquals(s, v.info());
 	}
-	
-	
-
 }

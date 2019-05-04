@@ -1,6 +1,8 @@
 package sut;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +27,7 @@ public class BCC {
 		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
 		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
-		assertFalse(t1.equals(t2), "Teste_base");
+		assertFalse("Teste_base", t1.equals(t2));
 	}
 	
 	/*
@@ -33,13 +35,11 @@ public class BCC {
 	 */
 	@Test
 	public void teste_t1() {
-		List<Integer> l1 = Arrays.asList(1);
 		List<Integer> l2 = Arrays.asList(3,4);
-		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,1);
-		t1.delete(1);
+		ArrayNTree<Integer> t1 = new ArrayNTree<>(1);
 		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
-		assertFalse(t1.equals(t2), "Teste_1");
+		assertFalse("Teste_1", t1.equals(t2));
 	}
 	
 	/*
@@ -53,7 +53,7 @@ public class BCC {
 		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
 		ArrayNTree<Integer> t2 = new ArrayNTree<>(0);
 		
-		assertFalse(t1.equals(t2), "Teste_2");
+		assertFalse("Teste_2", t1.equals(t2));
 	}
 	
 	/*
@@ -67,7 +67,7 @@ public class BCC {
 		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
 		ArrayNTree<Integer> t2 = null;
 		
-		assertFalse(t1.equals(t2), "Teste_3");
+		assertFalse("Teste_3", t1.equals(t2));
 	}
 	
 	/*
@@ -82,7 +82,7 @@ public class BCC {
 		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
 		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
-		assertTrue(t1.equals(t2), "Teste_4");
+		assertTrue("Teste_4", t1.equals(t2));
 	}
 	
 	/*
@@ -96,6 +96,6 @@ public class BCC {
 		ArrayNTree<Integer> t1 = new ArrayNTree<>(l1,4);
 		ArrayNTree<Integer> t2 = new ArrayNTree<>(l2,4);
 		
-		assertFalse(t1.equals(t2), "Teste_5");
+		assertFalse("Teste_5", t1.equals(t2));
 	}
 }

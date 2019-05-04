@@ -1,6 +1,6 @@
 package sut;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -10,13 +10,12 @@ import java.util.NoSuchElementException;
 import org.junit.Test;
 
 public class TestArrayNTreeIterator {
-
-	@Test//(expected = NoSuchElementException.class)
-	public void test_Iterator_Empty() throws NullPointerException {
-		//ArrayNTree<Integer> v = new ArrayNTree<Integer>(2);
-		//Iterator<Integer> i = v.iterator();
-		//assertEquals(new NoSuchElementException(), i.next());
-		//Impossivel atingir linha 399
+	
+	@Test(expected = NoSuchElementException.class)
+	public void test_Iterator_Empty()  {
+		ArrayNTree<Integer> v = new ArrayNTree<Integer>(2);
+		Iterator<Integer> i = v.iterator();
+		i.next();
 	}
 	
 	@Test

@@ -9,14 +9,14 @@ import org.junit.Test;
 
 public class TestArrayNTreeSize {
 	
-	/*
 	@Test
 	public void testSizeNoElements() {
 		ArrayNTree<Integer> v = new ArrayNTree<>(2); 
 		int size = v.size();
-		assertEquals(1, size);
+		assertEquals(0, size);
 	}
 
+	
 	@Test
 	public void testSizeOneElement() {
 		ArrayNTree<Integer> v = new ArrayNTree<>(1, 1);
@@ -24,7 +24,7 @@ public class TestArrayNTreeSize {
 		assertEquals(1, size);
 	}
 
-*/
+
 	@Test
 	public void testSizeMoreElements() {
 		List<Integer> list = Arrays.asList(1,2);
