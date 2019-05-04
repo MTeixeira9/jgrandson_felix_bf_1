@@ -153,20 +153,24 @@ public class ArrayNTree<T extends Comparable<T>> implements NTree<T> {
 
 	public void insert(T elem) {
 
+		//P1 C1
 		if(isEmpty()) {
 			data=elem;
 			empty=false;
 			return;
 		}
 
+		//P2 C2
 		if (contains(elem)) // will not insert repetitions
 			return;
 
+		//P3 C3
 		// if elem<data, elem should be at root, and we re-insert data
 		if (data.compareTo(elem)>0) {
 			T tmp = data; data = elem; elem = tmp; // swap values
 		}
 
+		//P4 C4
 		if(isLeaf()) {
 			insertAt(elem, 0);	
 			return;
