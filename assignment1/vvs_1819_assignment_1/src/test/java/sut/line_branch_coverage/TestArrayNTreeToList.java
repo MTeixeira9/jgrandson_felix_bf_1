@@ -1,4 +1,4 @@
-package sut;
+package sut.line_branch_coverage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
+
+import sut.ArrayNTree;
 
 public class TestArrayNTreeToList {
 	

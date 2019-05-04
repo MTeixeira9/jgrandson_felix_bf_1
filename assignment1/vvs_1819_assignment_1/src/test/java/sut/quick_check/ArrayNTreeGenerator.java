@@ -1,4 +1,4 @@
-package sut;
+package sut.quick_check;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,8 @@ import java.util.List;
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
+
+import sut.ArrayNTree;
 
 public class ArrayNTreeGenerator extends Generator<ArrayNTree<Integer>> {
 	

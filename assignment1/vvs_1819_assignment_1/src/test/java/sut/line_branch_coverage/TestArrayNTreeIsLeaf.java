@@ -1,8 +1,10 @@
-package sut;
+package sut.line_branch_coverage;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import sut.ArrayNTree;
 
 public class TestArrayNTreeIsLeaf {
 	

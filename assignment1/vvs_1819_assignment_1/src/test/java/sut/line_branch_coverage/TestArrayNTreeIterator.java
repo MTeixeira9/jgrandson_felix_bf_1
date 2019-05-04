@@ -1,4 +1,4 @@
-package sut;
+package sut.line_branch_coverage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.junit.Test;
+
+import sut.ArrayNTree;
 
 public class TestArrayNTreeIterator {
 	

@@ -1,4 +1,4 @@
-package sut;
+package sut.quick_check;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
@@ -17,11 +17,13 @@ import com.pholser.junit.quickcheck.Property;
 import com.pholser.junit.quickcheck.generator.InRange;
 import com.pholser.junit.quickcheck.runner.JUnitQuickcheck;
 
+import sut.ArrayNTree;
+
 
 @RunWith(JUnitQuickcheck.class)
 public class ArrayNTreeQuickCheck {
 
-	
+	/*
 	@Property (trials = 1000)
 	public void testOfInsertion(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
@@ -55,11 +57,11 @@ public class ArrayNTreeQuickCheck {
 
 
 	}
-
+*/
 	 
-
-	/**
-	@Property (trials=1000)
+/*
+	
+	@Property (trials=10000)
 	public void testOfRemoveAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
 		List<Integer> list_elem_original = tree.toList();
@@ -87,8 +89,8 @@ public class ArrayNTreeQuickCheck {
 	 */
 
 	
-/**
-	@Property (trials=1000)
+/*
+	@Property (trials=10000)
 	public void testOfInsertAndRemove(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree, 
 										@InRange(min="1" , max= "100") int i) {
 		while(tree.contains(i)) {
@@ -129,8 +131,8 @@ public class ArrayNTreeQuickCheck {
 
 	 */
 
-	/**
-	@Property (trials=1000)
+
+	@Property (trials=10000)
 	public void testOfInsertAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
 		List<Integer> list_elem_original = tree.toList();
@@ -161,10 +163,10 @@ public class ArrayNTreeQuickCheck {
 	}
 	
 	
-	*/
 	
 	
-	/**
+	/*
+	
 	@Property (trials=10000)
 	public void testOfInsertAnElementSeveralTimes(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree,
 													@InRange(min="1" , max= "100") int indice,
@@ -208,7 +210,7 @@ public class ArrayNTreeQuickCheck {
 
 	}
 	
-	*/
+*/
 
 
 }
