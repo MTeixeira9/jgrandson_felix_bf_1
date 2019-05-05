@@ -23,20 +23,16 @@ import sut.ArrayNTree;
 @RunWith(JUnitQuickcheck.class)
 public class ArrayNTreeQuickCheck {
 
-	/*
-	@Property (trials = 1000)
+	
+	@Property (trials = 15)
 	public void testOfInsertion(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
-		System.out.println("------------------Inicio do teste Insert -------------------");
+		System.out.println("--- Inicio do teste 1.Insert ---");
 		List<Integer> list_elem_original = tree.toList();
 		ArrayNTree<Integer> elem_clone = tree.clone();
 
-		System.out.println(tree.info());
-		System.out.println("------------------------------------------------------------");
-
-		System.out.println("--------LISTA DE ELEMTOS DA ARVORE ANTES DE INSERT----------");
-		System.out.println();
-		System.out.println(list_elem_original.toString());
+		System.out.println("-ArrayNTree antes dos Inserts -");
+		System.out.println(elem_clone.info());
 
 		//para ter a capacidade da arvore
 		for(Integer i : elem_clone) {
@@ -50,113 +46,84 @@ public class ArrayNTreeQuickCheck {
 			elem_clone.insert(i);
 		}
 
-		System.out.println("---------------------ARVORE COM INSERTS--------------------------");
+		System.out.println("--- ArrayNTree depois dos Inserts ---");
 		System.out.println(elem_clone.info());
-
+		System.out.println();
 		assertTrue(elem_clone.equals(tree));
 
-
 	}
-*/
-	 
-/*
+
 	
-	@Property (trials=10000)
+	@Property (trials=15)
 	public void testOfRemoveAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
 		List<Integer> list_elem_original = tree.toList();
 
-		System.out.println("------------------Inicio do teste REMOVE -------------------");
+		System.out.println("--- Inicio do teste 2.Remove ---");
+		
+		System.out.println("- ArrayNTree antes dos Deletes -");
 		System.out.println(tree.info());
-		System.out.println("------------------------------------------------------------");
-		System.out.println();
-		System.out.println("--------LISTA DE ELEMTOS DA ARVORE ANTES DE DELETE----------");
-		System.out.println();
-		System.out.println(list_elem_original.toString());
 
 		for(Integer i : list_elem_original) {
 			tree.delete(i);
 		}
-		System.out.println("---------------------ARVORE VAZIA--------------------------");
+		System.out.println("- ArrayNTree depois dos Deletes -");
 		System.out.println(tree.info());
 
-		System.out.println("-----------------------------------------------------------");
 		System.out.println();
 		assertTrue(tree.isEmpty());
 
 	}
 
-	 */
+	 
 
-	
-/*
-	@Property (trials=10000)
+	@Property (trials=15)
 	public void testOfInsertAndRemove(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree, 
 										@InRange(min="1" , max= "100") int i) {
-		while(tree.contains(i)) {
-			i = (i+1) %100;
-		}
+		assumeTrue(!tree.contains(i));
 
 		System.out.println();
 		System.out.println();
-		List<Integer> list_elem_original = tree.toList();
 		ArrayNTree<Integer> elem_clone = tree.clone();
 
+		System.out.println("--- Inicio do teste 3.InsertANDRemove ---");
+		
 		System.out.println("Elemento gerado = " + i);
 
-		System.out.println("------------------Inicio do teste Insert AND Remove -------------------");
+		System.out.println("- ArrayNTree antes dos Deletes -");
 		System.out.println(elem_clone.info());
-		System.out.println("------------------------------------------------------------");
-		System.out.println();
 
 
-		System.out.println("----------------TREE com insert do elemento gerado---------------");
+		System.out.println("- ArrayNTree com Insert do elem gerado -");
 		elem_clone.insert(i);
 		System.out.println(elem_clone.info());
-		System.out.println();
 
 		elem_clone.delete(i);
 
-		System.out.println("---------------TREE depois do delete do elemento gerado----------");
+		System.out.println("- ArrayNTree com Delete do elem gerado -");
 		System.out.println(elem_clone.info());
 		System.out.println();
-
-		System.out.println("Arvore INICIAL");
-		System.out.println(tree.info());
-		System.out.println("-----------------------------------------------------------");
-
 		assertTrue(tree.equals(elem_clone));
 
 	}
 
-	 */
-
-
-	@Property (trials=10000)
+	
+	@Property (trials=15)
 	public void testOfInsertAllElements(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree) {
 
-		List<Integer> list_elem_original = tree.toList();
 		ArrayNTree<Integer> elem_clone = tree.clone();
 
-		System.out.println();
-		System.out.println();
-
-		System.out.println("------------------Inicio do teste InsertAllElemnts -------------------");
+		System.out.println("--- Inicio do teste 4.InsertAllElemnts  ---");
+		
+		System.out.println("- ArrayNTree antes de inserir todos os elementos novamente -");
 		System.out.println(tree.info());
-		System.out.println("------------------------------------------------------------");
-		System.out.println();
-
-
+		
 		for(Integer i : tree) {
 			elem_clone.insert(i);
 		}
-		System.out.println("-----------------ARVORE Depois de inserir TODOS ELEMS----------------------");
+		System.out.println("- ArrayNTree depois de inserir todos os elementos novamente -");
 		System.out.println(elem_clone.info());
 
-		System.out.println("-----------------ARVORE INICIAL----------------------");
-		System.out.println(tree.info());
-
-		System.out.println("-----------------------------------------------------------");
 		System.out.println();
 		assertTrue(tree.equals(elem_clone));
 
@@ -164,17 +131,16 @@ public class ArrayNTreeQuickCheck {
 	
 	
 	
-	
-	/*
-	
-	@Property (trials=10000)
+	@Property (trials=15)
 	public void testOfInsertAnElementSeveralTimes(@From(ArrayNTreeGenerator.class) ArrayNTree<Integer> tree,
 													@InRange(min="1" , max= "100") int indice,
 													@InRange(min="20" , max= "100") int nVezes) {
 		
 		assumeTrue(!tree.isEmpty());
+		//assumeTrue(indice < tree.size());
 		
-
+		System.out.println("--- Inicio do teste 5.InsertAnElementSeveralTimes --- ");
+		System.out.println("Indice gerado = " + indice);
 		List<Integer> list_elem_original = tree.toList();
 		
 		while(indice > list_elem_original.size()-1 ) {
@@ -182,35 +148,22 @@ public class ArrayNTreeQuickCheck {
 		}
 		
 		ArrayNTree<Integer> elem_clone = tree.clone();
-
-		System.out.println();
-		System.out.println();
-
-		System.out.println("------------------Inicio do teste InsertAnElementSeveralTimes -------------------");
 		
-		System.out.println("Indice gerado = " + indice);
+		System.out.println("- ArrayNTree antes de inserir o mesmo elem varias vezes -");
 		System.out.println(tree.info());
-		System.out.println("------------------------------------------------------------");
-		System.out.println();
-
 
 		for(int y = 0; y<nVezes; y++) {
 			elem_clone.insert(list_elem_original.get(indice));
 		}
 		
-		System.out.println("-----------------ARVORE Depois de inserir ELEM varias vezes----------------------");
+		System.out.println("- ArrayNTree depois de inserir o mesmo elem varias vezes -");
 		System.out.println(elem_clone.info());
 
-		System.out.println("-----------------ARVORE INICIAL----------------------");
-		System.out.println(tree.info());
-
-		System.out.println("-----------------------------------------------------------");
 		System.out.println();
 		assertTrue(tree.equals(elem_clone));
 
 	}
 	
-*/
 
 
 }
