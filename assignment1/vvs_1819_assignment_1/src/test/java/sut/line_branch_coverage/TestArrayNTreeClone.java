@@ -11,9 +11,11 @@ import sut.ArrayNTree;
 
 public class TestArrayNTreeClone {
 
+	/**
+	 * Teste para verificar se uma ArrayNTree é igual ao seu clone
+	 */
 	@Test
 	public void test_clone() {
-
 		List<Integer> list = Arrays.asList(1,2);
 		ArrayNTree<Integer> v = new ArrayNTree<>(list,2);
 		ArrayNTree<Integer> clone = v.clone();
