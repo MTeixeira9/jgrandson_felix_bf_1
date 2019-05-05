@@ -11,6 +11,10 @@ import sut.ArrayNTree;
 
 public class TestArrayNTreeSize {
 	
+	/**
+	 * Teste para ver o tamanho de uma ArrayNTree que não tem elementos, e 
+	 * testar se o seu tamanho eh zero
+	 */
 	@Test
 	public void testSizeNoElements() {
 		ArrayNTree<Integer> v = new ArrayNTree<>(2); 
@@ -18,7 +22,10 @@ public class TestArrayNTreeSize {
 		assertEquals(0, size);
 	}
 
-	
+	/**
+	 * Teste para ver o tamanho de uma ArrayNTree com um elemento, e 
+	 * testar se o seu tamanho eh 1
+	 */
 	@Test
 	public void testSizeOneElement() {
 		ArrayNTree<Integer> v = new ArrayNTree<>(1, 1);
@@ -27,6 +34,10 @@ public class TestArrayNTreeSize {
 	}
 
 
+	/**
+	 * Teste para ver o tamanho de uma ArrayNTree varios (2) elementos, e 
+	 * testar se o seu tamanho eh 2
+	 */
 	@Test
 	public void testSizeMoreElements() {
 		List<Integer> list = Arrays.asList(1,2);

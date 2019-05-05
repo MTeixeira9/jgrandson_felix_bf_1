@@ -11,6 +11,9 @@ import sut.ArrayNTree;
 
 public class TestArrayNTreeString {
 
+	/**
+	 * Teste para ver o toString de uma ArrayNTree com elementos
+	 */
 	@Test
 	public void test_ToString() {
 		List<Integer> list = Arrays.asList(1,2);
@@ -19,6 +22,9 @@ public class TestArrayNTreeString {
 		assertEquals(s, v.toString());
 	}
 	
+	/**
+	 * Teste para ver o toString de uma ArrayNTree vazia
+	 */
 	@Test
 	public void test_ToStringEmpty() {
 		List<Integer> list = Arrays.asList();
@@ -27,6 +33,9 @@ public class TestArrayNTreeString {
 		assertEquals(s, v.toString());
 	}
 	
+	/**
+	 * Teste para imprimir uma ArrayNTree sem elemtos com o método info() 
+	 */
 	@Test
 	public void test_StringInfo() {
 		List<Integer> list = Arrays.asList();

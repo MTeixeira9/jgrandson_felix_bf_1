@@ -12,6 +12,11 @@ import sut.ArrayNTree;
 
 public class TestArrayNTreeToList {
 	
+	
+	/**
+	 * Teste para transformar uma ArrayNTree vazia numa lista e verificar o seu
+	 * tamanho
+	 */
 	@Test
 	public void test_toList_NoElements() {		
 		//List<Integer> list = Arrays.asList(1);
@@ -20,6 +25,10 @@ public class TestArrayNTreeToList {
 		assertEquals(0, test.size());
 	}
 	
+	/**
+	 * Teste para transformar uma ArrayNTree com elementos numa lista 
+	 * e verificar o seu tamanho
+	 */
 	@Test
 	public void test_toList_MoreElements() {		
 		List<Integer> list = Arrays.asList(1,2,3);
