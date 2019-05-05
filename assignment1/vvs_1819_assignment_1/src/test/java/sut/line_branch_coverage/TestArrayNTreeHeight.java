@@ -11,6 +11,9 @@ import sut.ArrayNTree;
 
 public class TestArrayNTreeHeight {	
 	
+	/**
+	 * Teste para verificar a altura de uma ArrayNTree vazia
+	 */
 	@Test
 	public void test_Height_noElements(){
 		ArrayNTree<Integer> v = new ArrayNTree<>(2); 
@@ -19,6 +22,9 @@ public class TestArrayNTreeHeight {
 
 	}
 	
+	/**
+	 * Teste para verificar a altura de uma ArrayNTree nao vazia
+	 */
 	@Test
 	public void test_Height_MoreElements(){
 		List<Integer> list = Arrays.asList(1,2,3,4,5);

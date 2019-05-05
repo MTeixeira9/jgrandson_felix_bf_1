@@ -26,7 +26,7 @@ public class TestArrayNTreeContains {
 	 */
 	@Test
 	public void test_Contain_data() {
-		ArrayNTree<Integer> v = new ArrayNTree<>(1,2); //array empty, capacity = 2
+		ArrayNTree<Integer> v = new ArrayNTree<>(1,2); //array empty, capacity=2
 		boolean res = v.contains(1);
 		assertEquals(true, res);
 	}

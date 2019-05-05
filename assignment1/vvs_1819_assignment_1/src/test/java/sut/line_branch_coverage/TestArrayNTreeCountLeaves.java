@@ -12,8 +12,8 @@ import sut.ArrayNTree;
 public class TestArrayNTreeCountLeaves {
 
 	/**
-	 * Teste para verificar se uma ArrayNTree, constituida pela raiz e por mais um elemento,
-	 * o numero de folhas eh 1
+	 * Teste para verificar se uma ArrayNTree, constituida pela raiz e por mais 
+	 * um elemento, o numero de folhas eh 1
 	 */
 	@Test
 	public void testSizeCountLeavesMoreElements() {

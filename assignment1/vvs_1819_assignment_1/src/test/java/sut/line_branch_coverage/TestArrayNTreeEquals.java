@@ -11,25 +11,27 @@ import sut.ArrayNTree;
 
 public class TestArrayNTreeEquals {
 
+	/**
+	 * Teste para verificar se uma ArrayNTree eh igual a si propria
+	 */
 	@Test
 	public void test_Equals_this() {
-
 		List<Integer> l1 = Arrays.asList(1,2,3);
-
 		ArrayNTree<Integer> v1 = new ArrayNTree<>(l1,2); 
-		
 		boolean res = v1.equals(v1);
 		assertEquals(true,res);
 	}
 
+	/**
+	 * Teste para verificar se uma ArrayNTree eh igual a um objeto diferente de
+	 * ArrayNTree
+	 */
 	@Test
 	public void test_Equals_other() {
 
 		List<Integer> l1 = Arrays.asList(1,2,3);
-
 		ArrayNTree<Integer> v1 = new ArrayNTree<>(l1,2); 
 		Object other = this;
-
 		boolean res = v1.equals(other);
 		assertEquals(false,res);
 	}
